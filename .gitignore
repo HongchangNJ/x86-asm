@@ -3,3 +3,5 @@ hello.o
 cmake-build-debug
 build
 .idea
+loop
+loop.o

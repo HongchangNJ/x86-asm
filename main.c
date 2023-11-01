@@ -3,22 +3,22 @@
 char hello[] = "Hello, World!";
 
 // AT&T风格
-void helloWorld() {
-    __asm__ (
-            "movl $4, %%eax\n"        // sys_write
-            "movl $1, %%ebx\n"        // file descriptor (stdout)
-            "movl $hello, %%ecx\n"    // pointer to the message
-            "movl $13, %%edx\n"       // message length
-            "int $0x80\n"             // make a system call
-
-            // exit(0)
-            "movl $1, %%eax\n"        // sys_exit
-            "movl $0, %%ebx\n"        // exit status
-            "int $0x80\n"             // make a system call"
-            :
-            : "r"("Hello, World!---")
-            );
-}
+//void helloWorld() {
+//    __asm__ (
+//            "movl $4, %%eax\n"        // sys_write
+//            "movl $1, %%ebx\n"        // file descriptor (stdout)
+//            "movl $hello, %%ecx\n"    // pointer to the message
+//            "movl $13, %%edx\n"       // message length
+//            "int $0x80\n"             // make a system call
+//
+//            // exit(0)
+//            "movl $1, %%eax\n"        // sys_exit
+//            "movl $0, %%ebx\n"        // exit status
+//            "int $0x80\n"             // make a system call"
+//            :
+//            : "r"("Hello, World!---")
+//            );
+//}
 
 int main() {
     const char message[] = "Hello, World!\n";
